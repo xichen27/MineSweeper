@@ -12,6 +12,16 @@ class Game
     save
   end
   
+  def leaderboard(time_taken)
+    File.open("leaderboard", "w") do |f|
+      f.puts "#{@player.name} => #{time_taken}"
+    end
+  end
+  
+  def add_to_leaderboard
+    @@leaderboard[@player.name] = lapsed_time
+  end
+  
   def get_move
     action, position = @player.move
     if action == :f
@@ -32,8 +42,13 @@ class Game
     if @board.lost?
       puts "Try again"
     else
+      time_taken = elapsed_time.to_i
       puts "You won!"
-      puts "You took #{elapsed_time.to_i} seconds"
+      puts "You took #{time_taken} seconds"
+      leaderboard(time_taken)
+      File.readlines("leaderboard") do |f|
+        puts f
+      end
     end
   end
   

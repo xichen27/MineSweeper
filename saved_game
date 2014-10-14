@@ -1,8 +1,8 @@
---- &70331578732280 !ruby/object:Game
-board: &70331578731740 !ruby/object:Board
+--- &70214733811620 !ruby/object:Game
+board: &70214733811080 !ruby/object:Board
   rows:
   - - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -10,7 +10,7 @@ board: &70331578731740 !ruby/object:Board
       - 0
       - 0
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -18,7 +18,7 @@ board: &70331578731740 !ruby/object:Board
       - 0
       - 1
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -26,15 +26,15 @@ board: &70331578731740 !ruby/object:Board
       - 0
       - 2
     - !ruby/object:Tile
-      board: *70331578731740
-      revealed: true
-      flagged: false
-      mined: false
+      board: *70214733811080
+      revealed: false
+      flagged: true
+      mined: true
       pos:
       - 0
       - 3
   - - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -42,7 +42,7 @@ board: &70331578731740 !ruby/object:Board
       - 1
       - 0
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -50,7 +50,7 @@ board: &70331578731740 !ruby/object:Board
       - 1
       - 1
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -58,7 +58,7 @@ board: &70331578731740 !ruby/object:Board
       - 1
       - 2
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -66,7 +66,7 @@ board: &70331578731740 !ruby/object:Board
       - 1
       - 3
   - - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -74,7 +74,7 @@ board: &70331578731740 !ruby/object:Board
       - 2
       - 0
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -82,7 +82,7 @@ board: &70331578731740 !ruby/object:Board
       - 2
       - 1
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -90,7 +90,7 @@ board: &70331578731740 !ruby/object:Board
       - 2
       - 2
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -98,23 +98,23 @@ board: &70331578731740 !ruby/object:Board
       - 2
       - 3
   - - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: false
       flagged: false
+      mined: false
+      pos:
+      - 3
+      - 0
+    - !ruby/object:Tile
+      board: *70214733811080
+      revealed: false
+      flagged: true
       mined: true
       pos:
       - 3
-      - 0
-    - !ruby/object:Tile
-      board: *70331578731740
-      revealed: false
-      flagged: false
-      mined: true
-      pos:
-      - 3
       - 1
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -122,7 +122,7 @@ board: &70331578731740 !ruby/object:Board
       - 3
       - 2
     - !ruby/object:Tile
-      board: *70331578731740
+      board: *70214733811080
       revealed: true
       flagged: false
       mined: false
@@ -130,12 +130,12 @@ board: &70331578731740 !ruby/object:Board
       - 3
       - 3
   mines: 2
-  flags: 0
+  flags: 2
   dimensions:
   - 4
   - 4
 player: !ruby/object:Player
-  name: Andrew
-  game: *70331578732280
-session_start: 2014-10-13 17:30:52.809210000 -07:00
-time_passed: 19.778256
+  name: Xi
+  game: *70214733811620
+session_start: 2014-10-13 17:58:58.315736000 -07:00
+time_passed: 148.320812
