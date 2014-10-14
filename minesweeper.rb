@@ -1,12 +1,14 @@
 require 'yaml'
 
 class Game
-  
+  attr_writer :session_start
   attr_reader :board
   
   def initialize(name, dimensions = [9, 9])
     @board = Board.new(dimensions)
     @player = Player.new(name, self)
+    @session_start = Time.now
+    @time_passed = 0
     save
   end
   
@@ -31,10 +33,16 @@ class Game
       puts "Try again"
     else
       puts "You won!"
+      puts "You took #{elapsed_time.to_i} seconds"
     end
   end
   
+  def elapsed_time
+    @time_passed += Time.now - @session_start
+  end
+  
   def save
+    elapsed_time
     File.open("saved_game", "w") do |f|
       f.puts self.to_yaml
     end
@@ -42,6 +50,7 @@ class Game
   
   def self.load
     game = YAML.load_file("saved_game")
+    game.session_start = Time.now
     game.turn
   end
 end
@@ -117,7 +126,7 @@ class Board
   end
   
   def auto_flag
-    if @mines - @flags == unrevealed_tiles.length
+    if @mines != @flags && @mines - @flags == unrevealed_tiles.length
       puts "Would you like to flag the remaining tiles? (y/n)"
       if gets.chomp == "y"
         unrevealed_tiles.each { |tile| tile.toggle_flag }
@@ -277,18 +286,11 @@ class Player
       position = gets.chomp.split(", ").map {|i| i.to_i}
     end
     [action, position]
-    # Methods to handle errors.
   end
   
   def valid_action?(action)
     action == :r || action == :f
   end
-  
-  # def valid_move?(pos)
- #    return false unless pos.is_a?(Integer)
- #    return true unless pos < 0 || pos > 8
- #    false
- #  end
 end
 
 if __FILE__ == $PROGRAM_NAME
